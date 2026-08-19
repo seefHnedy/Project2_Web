@@ -1,0 +1,253 @@
+.overview-header {
+  padding: 28px 30px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #ffffff, #eaf7ff);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.dashboard-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12.5px;
+}
+
+.overview-header h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.overview-header p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+.overview-header strong {
+  color: var(--primary-dark);
+}
+
+.overview-error {
+  margin-top: 18px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-weight: 700;
+  border: 1px solid #fecdca;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.quick-link-card {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 13px;
+  transition: 0.15s ease;
+}
+
+.quick-link-card svg {
+  color: var(--primary-dark);
+}
+
+.quick-link-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card-link {
+  display: block;
+}
+
+.stat-card,
+.dashboard-table-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-card {
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  transition: 0.15s ease;
+}
+
+.stat-card-link:hover .stat-card {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+}
+
+.stat-card h2 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.skeleton-line {
+  display: inline-block;
+  width: 46px;
+  height: 16px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #eef1f5 25%, #f7f9fb 37%, #eef1f5 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.dashboard-table-card {
+  margin-top: 22px;
+  padding: 22px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.table-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.responsive-table {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  text-align: right;
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+  white-space: nowrap;
+}
+
+th {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.status {
+  display: inline-flex;
+  padding: 6px 11px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12.5px;
+}
+
+.status.success {
+  color: #027a48;
+  background: var(--success-soft);
+}
+
+.status.pending {
+  color: var(--warning);
+  background: var(--warning-soft);
+}
+
+.overview-loading,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px 10px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.empty-state svg {
+  color: #c3cddb;
+}
+
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .quick-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .overview-header {
+    padding: 20px;
+  }
+}
